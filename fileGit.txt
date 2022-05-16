@@ -1,3 +1,3 @@
 this is a file to a test the gitHub.
 add one more file of code (keep this line from master)
-
+add this line to check the remote merge
