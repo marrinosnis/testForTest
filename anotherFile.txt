@@ -1,2 +1,2 @@
-add antoher file with lines
+add another file with lines
 add this line of code from master branch 12/05
