@@ -1,0 +1,10 @@
+This is file to be reseted.
+
+
+
+This is a new line of code.
+New commit for this line of new code!
+
+
+	Another line of code in this file
+		Let's see what will happen.!!
