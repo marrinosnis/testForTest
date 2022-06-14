@@ -1,1 +1,6 @@
 this is for the rebase ;) 
+My name is Tati. I have Tetas Pepas kai Prokopoulhs <-- this is a line of code
+
+for (i=0; i<10; i++) {
+	print("the number is: ", i) 
+
