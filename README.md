@@ -1,7 +1,6 @@
 This is a file which will include a readme instructions.
-1. The first line will be from the master branch!!
-<<<<<<< HEAD
 
-3. Add a comment to check the soft reset
+1. Readme file to monitor the progress of the .py script
 
-4. modify the README.md file, from the helper branch.
+2. Check the functionality of it
+
