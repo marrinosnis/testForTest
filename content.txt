@@ -1,0 +1,3 @@
+New file with incorrect content
+
+add a new line again
