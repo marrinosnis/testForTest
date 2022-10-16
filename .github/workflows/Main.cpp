@@ -1,8 +1,8 @@
 #include <iostream>
 
-int main() 
+int main()
 {
-	std::cout<< "Different architectures" <<std::endl;
-	
+	std::cout<< "Print from the file :=> Different architectures" <<std::endl;
+
 	return 0;
 }
