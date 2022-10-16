@@ -27,4 +27,4 @@ jobs:
     - name: Compile the file from the repo
       run: |
         g++ -c -Wall -g Main.cpp
-        g++ -g -0 Main.exe Main.o
+        g++ -g -o Main.exe Main.o
