@@ -1,0 +1,19 @@
+name: check Different Architectures
+
+on: [push, pull]  # create list, to indicate when the workflow will run
+
+jobs:
+  linux_arm32/64:
+    name: Run arm32 and arm54 architectures for linux latest distributions
+    runs-on: ubuntu-latest # we can choose a specific linux distribution if it needs
+
+    strategy:
+      matrix:
+        include:
+          -arch: arm32
+           distro: ubuntu-latest
+          -arch: arm64
+           distro: ubuntu-latest
+          -arch: armv6
+           disto: ubuntu-latest
+           
