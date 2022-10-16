@@ -1,6 +1,6 @@
 name: check Different Architectures
 
-on: [push, pull]  # create list, to indicate when the workflow will run
+on: [push]  # create list, to indicate when the workflow will run
 
 jobs:
   linux_arm32/64:
