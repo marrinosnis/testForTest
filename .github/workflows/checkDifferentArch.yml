@@ -24,7 +24,11 @@ jobs:
     - name: 🛎️ Checkout Repo
       uses: actions/checkout@v3
 
+    - name: Set up g++ compiler
+      uses: egor-tensin/setup-gcc@v1
+
     - name: Compile the file from the repo
       run: |
         g++ -c -Wall -g Main.cpp
         g++ -g -o Main.exe Main.o
+        ./Main.exe
