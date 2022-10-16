@@ -23,6 +23,7 @@ jobs:
 
     - name: Compile the file from the repo
       run: |
+        cd .github/workflows
         g++ -c -Wall -g Main.cpp
         g++ -g -o Main.exe Main.o
         ./Main.exe
