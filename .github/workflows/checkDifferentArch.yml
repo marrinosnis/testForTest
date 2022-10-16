@@ -3,7 +3,7 @@ name: check Different Architectures
 on: [push]  # create list, to indicate when the workflow will run
 
 jobs:
-  linux_arm32/64:
+  linux_arm32 or 64:
     name: Run arm32 and arm64 architectures for linux latest distributions
     runs-on: ubuntu-latest # we can choose a specific linux distribution if it needs
 
