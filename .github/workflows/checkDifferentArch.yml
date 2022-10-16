@@ -12,8 +12,3 @@ jobs:
         include:
           -arch: arm32
            distro: ubuntu-latest
-          -arch: arm64
-           distro: ubuntu-latest
-          -arch: armv6
-           disto: ubuntu-latest
-           
