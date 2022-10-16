@@ -24,6 +24,7 @@ jobs:
     - name: 🛎️ Checkout Repo
       uses: actions/checkout@v3
 
+    - name: Compile the file from the repo
       run: |
         g++ -c -Wall -g Main.cpp
         g++ -g -0 Main.exe Main.o
