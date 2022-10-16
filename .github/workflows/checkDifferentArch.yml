@@ -10,5 +10,7 @@ jobs:
     strategy:
       matrix:
         include:
-          -arch: arm32
+          -arch: aarch64
            distro: ubuntu-latest
+          -arch: armv6
+           distro: bullseye
