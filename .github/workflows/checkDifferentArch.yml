@@ -6,7 +6,7 @@ jobs:
   linux_arm32/64:
     name: Run arm32 and arm54 architectures for linux latest distributions
     #runs-on: ubuntu-latest # we can choose a specific linux distribution if it needs
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     # Run steps on a matrix of 4 arch/distro combinations
     strategy:
