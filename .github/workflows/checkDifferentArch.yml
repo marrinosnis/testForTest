@@ -17,15 +17,12 @@ jobs:
             distro: alpine_latest
           - arch: s390x
             distro: fedora_latest
-          - arch: armv7
-            distro: archarm_latest
-
+          - arch: armv6
+            distro: bullseye
+ 
     steps:
     - name: 🛎️ Checkout Repo
       uses: actions/checkout@v3
-
-    # - name: Set up g++ compiler
-    #   uses: egor-tensin/setup-gcc@v1
 
     - name: Compile the file from the repo
       run: |
