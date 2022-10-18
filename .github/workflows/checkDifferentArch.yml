@@ -19,7 +19,7 @@ jobs:
             distro: fedora_latest
           - arch: armv6
             distro: bullseye
- 
+
     steps:
     - name: 🛎️ Checkout Repo
       uses: actions/checkout@v3
@@ -29,3 +29,7 @@ jobs:
         g++ -c -Wall -g Main.cpp
         g++ -g -o Main.exe Main.o
         ./Main.exe
+
+    - name: "Ubuntu Latest GCC", artifact: "Linux.tar.xz"
+      os: ubuntu-Latest
+      build_type: "Release", cc: "gcc", cxx: "g++"
