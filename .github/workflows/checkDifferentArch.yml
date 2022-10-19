@@ -18,7 +18,7 @@ jobs:
           unit_test_build: -Dtest=ON
         
       - name: Create artifacts
-      - uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           path: build/*.tar.gz
           name: artifact_armv6_bullseye.tar.gz
