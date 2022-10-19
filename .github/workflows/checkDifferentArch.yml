@@ -19,8 +19,8 @@ jobs:
 
     -name: Run for armv6 architecture
       with:
-        arch: armv6
-        distro: bullseye
+        - arch: armv6
+          distro: bullseye
 
     -name: Create arctifacts
       uses: actions/upload-artifact@v3
