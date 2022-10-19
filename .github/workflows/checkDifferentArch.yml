@@ -18,7 +18,8 @@ jobs:
         ./Main.exe
 
     -name: Run for armv6 architecture
-      - arch: armv6
+      with:
+        arch: armv6
         distro: bullseye
 
     -name: Create arctifacts
