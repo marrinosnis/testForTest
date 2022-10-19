@@ -6,29 +6,30 @@ jobs:
   run_on_linux_server :
     
     runs-on: ubuntu-latest
-    
+
+    name: Build on ubuntu-latest armv6
     steps:
-      - name: Checkout the code
       - uses: actions/checkout@v3
-      - name: Build the project
-        uses: nicledomaS/cmake_build_action@v1.4
-        with:
-          submodule_update: ON
-          run_tests: ON
-          unit_test_build: -Dtest=ON
-        
-      - name: Set the arch and distro of the platform
+      - uses: uraimo/run-on-arch-action@v2
+        name: Run commands
+        id: runcmd
         with:
           arch: armv6
           distro: bullseye
 
-      - name: Compile the file from the repo
+          # Not required, but speeds up builds by storing container images in
+          # a GitHub package registry.
+          # githubToken: ${{ github.token }}
+
+          # Set an output parameter `uname` for use in subsequent steps
+          run: |
+            uname -a
+            echo ::set-output name=uname::$(uname -a)
+
+      - name: Get the output
+        # Echo the `uname` output parameter from the `runcmd` step
         run: |
-          g++ -c -Wall -g Main.cpp
-          g++ -g -o Main.exe Main.o
-          ./Main.exe
-          
-      
+          echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
       - name: Create artifacts
         uses: actions/upload-artifact@v2
 
