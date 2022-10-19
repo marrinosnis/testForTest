@@ -3,22 +3,9 @@ name: check Different Architectures
 on: [push]  # create list, to indicate when the workflow will run
 
 jobs:
-  linux:
-    name: Run arm32 and arm64 architectures for linux latest distributions
+  run on linux server :
+    name: Armv6 architecture for linux latest distributions
     runs-on: ubuntu-latest # we can choose a specific linux distribution if it needs
-
-    # Run steps on a matrix of 4 arch/distro combinations
-    strategy:
-      matrix:
-        include:
-          - arch: aarch64
-            distro: ubuntu18.04
-          - arch: ppc64le
-            distro: alpine_latest
-          - arch: s390x
-            distro: fedora_latest
-          - arch: armv6
-            distro: bullseye
 
     steps:
     - name: 🛎️ Checkout Repo
@@ -30,6 +17,9 @@ jobs:
         g++ -g -o Main.exe Main.o
         ./Main.exe
 
-    - name: "Ubuntu Latest GCC", artifact: "Linux.tar.xz"
-      os: ubuntu-Latest
-      build_type: "Release", cc: "gcc", cxx: "g++"
+    -name: Run for armv6 architecture
+      - arch: armv6
+        distro: bullseye
+
+    -name: Create arctifacts
+      uses: actions/upload-artifact@v3
