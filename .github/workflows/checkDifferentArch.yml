@@ -7,20 +7,14 @@ jobs:
     runs-on: ubuntu-latest # we can choose a specific linux distribution if it needs
     name: Builds on ${{matrix.distro}} and ${{matrix.arch}}
     
-    strategy:
-      matrix:
-        include:
-          - arch: armv6
-            distro: bullseye
-    
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2.1.0
       - uses: uraimo/run-on-arch-action@v2
-        name: Build Artifacts
-        id: build
+        name: Run commands
+        id: runcmd
         with:
-          arch: ${{matrix.arxh}}
-          distro: ${{matrix.distro}}
+          arch: armv6
+          distro: bullseye
 
       - name: Compile the file from the repo
         run: |
