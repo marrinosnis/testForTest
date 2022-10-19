@@ -19,8 +19,8 @@ jobs:
         name: Build Artifacts
         id: build
         with:
-          arch: armv6
-          distro: bullseye
+          arch: ${{matrix.arxh}}
+          distro: ${{matrix.distro}}
 
       - name: Compile the file from the repo
         run: |
