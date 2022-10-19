@@ -17,21 +17,18 @@ jobs:
           run_tests: ON
           unit_test_build: -Dtest=ON
         
+      - name: Set the arch and distro of the platform
+        with:
+          arch: armv6
+          distro: bullseye
+
+      - name: Compile the file from the repo
+        run: |
+          g++ -c -Wall -g Main.cpp
+          g++ -g -o Main.exe Main.o
+          ./Main.exe
+          
+      
       - name: Create artifacts
         uses: actions/upload-artifact@v2
-        with:
-          path: build/*.tar.gz
-          name: artifact_armv6_bullseye.tar.gz
-        
-        
-     # - name: Set the arch and distro of the platform
-     #   with:
-     #     arch: armv6
-     #     distro: bullseye
-
-     # - name: Compile the file from the repo
-     #   run: |
-     #     g++ -c -Wall -g Main.cpp
-     #     g++ -g -o Main.exe Main.o
-     #     ./Main.exe
 
