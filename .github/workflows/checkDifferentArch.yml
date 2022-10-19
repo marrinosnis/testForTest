@@ -2,6 +2,9 @@ name: check Different Architectures
 
 on: [push]  # create list, to indicate when the workflow will run
 
+env:
+  ARTIFACT_NAME: myartifact
+
 jobs:
   run_on_linux_server :
     
@@ -32,4 +35,7 @@ jobs:
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
       - name: Create artifacts
         uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: .
 
