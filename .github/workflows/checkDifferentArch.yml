@@ -11,18 +11,21 @@ jobs:
     runs-on: ubuntu-latest
 
     name: Build on ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: uraimo/run-on-arch-action@v2
-        name: Run commands
-        with:
-          arch: armv6
-          distro: bullseye
+    strategy:
+      matrix:
+        include:
+          - arch: armv6
+            distro: bullseye
 
-          run: |
-            g++ -c -Wall -g Main.cpp
-            g++ -g -o Main.exe Main.o
-            ./Main.exe
+    steps:
+      - uses: actions/checkout@v2.1.0
+      - uses: uraimo/run-on-arch-action@v2
+        name: Something that you should not know
+        id: build
+        with:
+          arch: ${{ matrix.arch }}
+          distro: ${{ matrix.distro }}
+
 
       - name: Create artifacts
         uses: actions/upload-artifact@v2
