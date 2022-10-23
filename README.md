@@ -6,3 +6,5 @@ This is a file which will include a readme instructions.
 4. modify the README.md file, from the helper branch.
 
 5. this line if from MAC M1
+
+6. add also this line from ASUS laptop
