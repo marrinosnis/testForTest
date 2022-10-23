@@ -2,13 +2,10 @@ name: check Different Architectures
 
 on: [push]  # create list, to indicate when the workflow will run
 
-env:
-  ARTIFACT_NAME: myartifact
-
 jobs:
   run_on_linux_server :
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     name: Build on ubuntu-latest
     strategy:
