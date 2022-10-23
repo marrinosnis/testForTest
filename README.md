@@ -7,4 +7,3 @@ This is a file which will include a readme instructions.
 
 5. this line if from MAC M1
 
-6. add also this line from ASUS laptop
