@@ -23,9 +23,13 @@ jobs:
               uname -a
               echo ::set-output name=uname::$(uname -a)
 
-        - name: Get the output
+        - name: Compile the file from the repo
           run: |
-            echo "The uname output was ${{steps.runcmd.outputs.uname}}"
+            pwd
+            ls
+            g++ -c -Wall -g Main.cpp
+            g++ -g -o Main.exe Main.o
+            ./Main.exe
 
 
         - name: Create artifacts
