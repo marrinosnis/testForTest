@@ -23,3 +23,7 @@ jobs:
         - name: Get the output
           run: |
             echo "The uname output was ${{steps.runcmd.outputs.uname}}"
+
+
+        - name: Create artifacts
+          uses: actions/upload-artifact@v2
