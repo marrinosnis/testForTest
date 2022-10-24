@@ -2,6 +2,9 @@ name: check Different Architectures
 
 on: [push]  # create list, to indicate when the workflow will run
 
+env:
+  ARTIFACT_NAME: myartifact
+
 jobs:
   armv6 :
 
@@ -28,5 +31,5 @@ jobs:
         - name: Create artifacts
           uses: actions/upload-artifact@
           with:
-            name: myArtifactsCpp
+            name: ${{env.ARTIFACT_NAME}}
             path: .
