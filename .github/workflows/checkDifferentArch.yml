@@ -20,6 +20,8 @@ jobs:
             distro: bullseye
 
             run: |
+              pwd
+              ls
               uname -a
               echo ::set-output name=uname::$(uname -a)
 
