@@ -11,18 +11,14 @@ jobs:
     runs-on: ubuntu-18.04
     name: Builds on ubuntu-18.04 armv6
     steps:
-        - uses: actions/checkout@v2.1.0
-        - uses: uraimo/run-on-arch-action@v2
-          name: Run comands
-          id: runcmd
+        - name: Checkout the code
+          uses: actions/checkout@v2.1.0
+        
+        - name: Run on the uraimo action
+          uses: uraimo/run-on-arch-action@v2
           with:
             arch: armv6
             distro: bullseye
-
-            run: |
-              pwd
-              ls
-              echo uname -a
 
         - name: Compile the file from the repo
           run: |
@@ -31,7 +27,6 @@ jobs:
             g++ -c -Wall -g Main.cpp
             g++ -g -o Main.exe Main.o
             ./Main.exe
-
 
         - name: Create artifacts
           uses: actions/upload-artifact@v2
