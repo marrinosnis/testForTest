@@ -20,6 +20,9 @@ jobs:
             arch: armv6
             distro: bullseye
 
+        - name: Run the bash script
+          run: |
+            sh ./run.sh
         - name: Compile the file from the repo
           run: |
             pwd
