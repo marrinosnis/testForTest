@@ -18,6 +18,7 @@ jobs:
         - name: Run the bash script
           run: |
             echo "Rhn the bash script to check the environment"
+            chmod +x run.sh
             sh ./run.sh
         
         # - name: Run on the uraimo action
