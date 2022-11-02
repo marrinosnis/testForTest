@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-18.04
 
     name: Run the bash script
-          run: |
-            echo "Rhn the bash script to check the environment"
-            sh ./run.sh
+      run: |
+        echo "Rhn the bash script to check the environment"
+        sh ./run.sh
 
     name: Builds on ubuntu-18.04 armv6
     steps:
