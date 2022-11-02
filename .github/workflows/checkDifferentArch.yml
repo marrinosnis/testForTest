@@ -20,22 +20,22 @@ jobs:
             echo "Rhn the bash script to check the environment"
             sh ./run.sh
         
-        - name: Run on the uraimo action
-          uses: uraimo/run-on-arch-action@v2
-          with:
-            arch: armv6
-            distro: bullseye
+        # - name: Run on the uraimo action
+        #   uses: uraimo/run-on-arch-action@v2
+        #   with:
+        #     arch: armv6
+        #     distro: bullseye
 
-        - name: Compile the file from the repo
-          run: |
-            pwd
-            ls
-            g++ -c -Wall -g Main.cpp
-            g++ -g -o Main.exe Main.o
-            ./Main.exe
+        # - name: Compile the file from the repo
+        #   run: |
+        #     pwd
+        #     ls
+        #     g++ -c -Wall -g Main.cpp
+        #     g++ -g -o Main.exe Main.o
+        #     ./Main.exe
 
-        - name: Create artifacts
-          uses: actions/upload-artifact@v2
-          with:
-            name: ${{env.ARTIFACT_NAME}}
-            path: .
+        # - name: Create artifacts
+        #   uses: actions/upload-artifact@v2
+        #   with:
+        #     name: ${{env.ARTIFACT_NAME}}
+        #     path: .
