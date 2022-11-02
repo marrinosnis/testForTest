@@ -4,6 +4,7 @@ on: [push]  # create list, to indicate when the workflow will run
 
 env:
   ARTIFACT_NAME: myartifact
+  PATH_OF_SCRIPT: cd .github/workflows
 
 jobs:
   armv6 :
@@ -17,7 +18,7 @@ jobs:
         
         - name: Run the bash script
           run: |
-            cd .github/workflows
+            ${{env.PATH_OF_SCRIPT}}
             echo "pwd"
             echo "Run the bash script to check the environment"
             chmod +x run.sh
