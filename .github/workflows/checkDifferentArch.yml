@@ -9,6 +9,12 @@ jobs:
   armv6 :
 
     runs-on: ubuntu-18.04
+
+    - name: Run the bash script
+          run: |
+          echo "Rhn the bash script to check the environment"
+          sh ./run.sh
+
     name: Builds on ubuntu-18.04 armv6
     steps:
         - name: Checkout the code
@@ -20,9 +26,6 @@ jobs:
             arch: armv6
             distro: bullseye
 
-        - name: Run the bash script
-          run: |
-            sh ./run.sh
         - name: Compile the file from the repo
           run: |
             pwd
