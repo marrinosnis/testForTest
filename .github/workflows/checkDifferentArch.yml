@@ -10,15 +10,15 @@ jobs:
 
     runs-on: ubuntu-18.04
 
-    name: Run the bash script
-      run: |
-        echo "Rhn the bash script to check the environment"
-        sh ./run.sh
-
     name: Builds on ubuntu-18.04 armv6
     steps:
         - name: Checkout the code
           uses: actions/checkout@v2.1.0
+        
+        - name: Run the bash script
+          run: |
+            echo "Rhn the bash script to check the environment"
+            sh ./run.sh
         
         - name: Run on the uraimo action
           uses: uraimo/run-on-arch-action@v2
