@@ -19,9 +19,7 @@ jobs:
         - name: Run the bash script
           run: |
             ${{env.PATH_OF_SCRIPT}}
-            echo "pwd"
             echo "Run the bash script to check the environment"
-            chmod +x run.sh
             sh ./run.sh
         
         # - name: Run on the uraimo action
