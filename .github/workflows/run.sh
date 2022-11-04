@@ -7,7 +7,7 @@ COMMIT_MESSAGE=$(git log -1 HEAD --pretty=format:%s)  #each time takes the most 
 jenk='jenkins'
 # echo $COMMIT_MESSAGE
 echo
-if [[ "$COMMIT_MESSAGE" == *jenk* ]]
+if "$COMMIT_MESSAGE" | grep -i -q "jenkins"
 then
     echo "Found keyword"   #here will be added the jenkins job-pipeline if the word jenkins is found
 else
