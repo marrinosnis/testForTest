@@ -19,7 +19,8 @@ jobs:
         - name: Run the bash script
           run: |
             echo "Run the bash script to check the environment"
-            cd .github/workflows
+            echo "The path is"
+            pwd
             chmod +x run.sh
             sh ./run.sh
         
