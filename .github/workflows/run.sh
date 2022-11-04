@@ -4,10 +4,10 @@ set -e
 echo "The repository that is currently running is: $GITHUB_REPOSITORY"
 
 COMMIT_MESSAGE=$(git log -1 HEAD --pretty=format:%s)  #each time takes the most recent commit after push
-echo
+jenk='jenkins'
 # echo $COMMIT_MESSAGE
 echo
-if grep -i -q "jenkins" <<< "$COMMIT_MESSAGE";
+if [[ "$COMMIT_MESSAGE" == *jenk* ]]
 then
     echo "Found keyword"   #here will be added the jenkins job-pipeline if the word jenkins is found
 else
