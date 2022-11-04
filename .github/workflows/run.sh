@@ -1,6 +1,7 @@
  #!/bin/bash
 set -e
 
+echo
 echo "The repository that is currently running is: $GITHUB_REPOSITORY"
 
 COMMIT_MESSAGE=$(git log -1 HEAD --pretty=format:%s)  #each time takes the most recent commit after push
