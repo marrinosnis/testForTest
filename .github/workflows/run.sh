@@ -9,7 +9,7 @@ COMMIT_MESSAGE=$(git log -1 HEAD --pretty=format:%s)  #each time takes the most 
 echo
 if echo "$COMMIT_MESSAGE" | grep -i -q -e "jenkins" -e "jenk" -e "kins";
 then
-    echo "Found keyword"   #here will be added the jenkins job-pipeline if the word jenkins is found
+    echo "The jenkins job should be triggered"   #here will be added the jenkins job-pipeline if the word jenkins is found
 else
-    echo "Nothing to process Marinos"
+    echo "No job should run-trigerred"
 fi
