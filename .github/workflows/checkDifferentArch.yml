@@ -9,7 +9,7 @@ env:
 jobs:
   armv6 :
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     name: Builds on ubuntu-18.04 armv6
     steps:
@@ -19,8 +19,7 @@ jobs:
         - name: Run the bash script
           run: |
             echo "Run the bash script to check the environment"
-            echo "The path is"
-            pwd
+            cd .github/workflows
             chmod +x run.sh
             sh ./run.sh
         
