@@ -19,7 +19,9 @@ jobs:
         - name: Run the bash script
           run: |
             echo "Run the bash script to check the environment"
-            sh ./github/workflows/run.sh
+            cd .github/workflows
+            chmod +x run.sh
+            sh ./run.sh
         
         # - name: Run on the uraimo action
         #   uses: uraimo/run-on-arch-action@v2
