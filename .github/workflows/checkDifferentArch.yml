@@ -9,7 +9,7 @@ env:
 jobs:
   armv6 :
 
-    runs-on: ubuntu-20.04.1
+    runs-on: ubuntu-latest
 
     name: Builds on ubuntu-18.04 armv6
     steps:
