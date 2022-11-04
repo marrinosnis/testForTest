@@ -4,7 +4,7 @@ on: [push]  # create list, to indicate when the workflow will run
 
 env:
   ARTIFACT_NAME: myartifact
-  PATH_OF_SCRIPT: cd .github/workflows
+  #PATH_OF_SCRIPT: cd .github/workflows
 
 jobs:
   armv6 :
@@ -18,9 +18,8 @@ jobs:
         
         - name: Run the bash script
           run: |
-            ${{env.PATH_OF_SCRIPT}}
             echo "Run the bash script to check the environment"
-            sh ./run.sh
+            sh ./github/workflows/run.sh
         
         # - name: Run on the uraimo action
         #   uses: uraimo/run-on-arch-action@v2
