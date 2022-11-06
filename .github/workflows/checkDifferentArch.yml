@@ -17,7 +17,7 @@ jobs:
           uses: actions/checkout@v2.1.0
         
         - name: Run the bash script
-          run: |
+          run: | #when execute the script, I use 'bash ./run.sh' because the 'sh ./run.sh' doesn't have the '[[ ... ]]' testing syntax
             echo "Run the bash script to check the environment"
             cd .github/workflows
             chmod +x run.sh

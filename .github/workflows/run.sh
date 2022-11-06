@@ -8,7 +8,7 @@ if [[ $GITHUB_REF_NAME == *_epic ]];
 then
     echo "The branch is EPIC"
 else
-    echo "The brach is about to RUN"
+    echo "The branch is NOT EPIC, and is about to run"
 fi
 
 echo
