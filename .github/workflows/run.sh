@@ -1,9 +1,10 @@
  #!/usr/bin/env bash
 set -e
 
-echo
-echo "The repository that is currently running is: $GITHUB_REPOSITORY"
-EPIC_CHECK=${GITHUB_REPOSITORY: -5}
+echo "The repository that is currently running is: $GITHUB_REF_NAME"
+
+EPIC_CHECK=${GITHUB_REF_NAME: -5}
+
 echo "The value of the EPIC_CHECK is" 
 echo $EPIC_CHECK
 
