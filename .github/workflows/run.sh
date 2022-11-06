@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 
 echo "The repository that is currently running is: $GITHUB_REF_NAME"
