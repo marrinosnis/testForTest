@@ -11,9 +11,11 @@ else
 
     if echo "$COMMIT_MESSAGE" | grep -i -q -e "jenkins" -e "jenk" -e "kins" #TODO: should change that, with the shell script testing [[ .. ]]
     then
-        echo "The jenkins job should be triggered"   #TODO: add here will be added the jenkins job-pipeline if the word jenkins is found
+        echo "The jenkins job should be triggered"   #return YES so the Jenkins pipeline can start the trigger
+        exit 0
     else
-        echo "No job should run-trigerred"
+        echo "No job should run-trigerred"     
+        exit 1  # exit with 1, so NONE Jenkins pipeline will start
     fi
 
 fi
