@@ -27,6 +27,7 @@ jobs:
               echo "the job will execute"
             else
               echo "the job WILL NOT execute"
+            fi
         
 
         
