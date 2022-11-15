@@ -26,7 +26,7 @@ jobs:
         - name: Run or Not the branch on Jenkins platform
            # that means that the previous run of the script has exit with 1 ==> 'exit 1'
           run: |
-            if [[ $? == 0 ]] 
+            if [ $? -eq 0 ] 
             then 
               echo "the job will execute"
             else
