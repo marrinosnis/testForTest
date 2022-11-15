@@ -25,7 +25,7 @@ jobs:
         
         - name: Run or Not the branch on Jenkins platform
           if: failure() # that means that the previous run of the script has exit with 1 ==> 'exit 1'
-          echo: "The jenkins job won't trigger. I have to check the other option."
+          run: echo "The jenkins job won't trigger. I have to check the other option. "
         
         # - name: Run on the uraimo action
         #   uses: uraimo/run-on-arch-action@v2
