@@ -5,6 +5,7 @@ echo "The branch that is currently running is: $GITHUB_REF_NAME"
 
 if [[ $GITHUB_REF_NAME == *_epic ]]; then 
     echo "The branch is EPIC"  # if the the name of branch ends in '_epic' I DO NOT want to triger the jenkins pipeline
+    echo "No Jenkins job should be trigger"
 else
     echo "The branch is NOT EPIC, and is about to run"
     echo; echo;
@@ -16,7 +17,7 @@ else
         exit 0
     else
         echo "No job should run-trigerred"     
-        exit 1  # exit with 1, so NONE Jenkins pipeline will start
+        #exit 1  # exit with 1, so NONE Jenkins pipeline will start
     fi
 
 fi
