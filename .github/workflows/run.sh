@@ -8,7 +8,7 @@ if [[ $GITHUB_REF_NAME == *_epic ]]; then
     echo "No Jenkins job should be trigger"
 else
     echo "The branch is NOT EPIC, and is about to run"
-    echo; echo;
+    echo;
     COMMIT_MESSAGE=$(git log -1 HEAD --pretty=format:%s)  #each time takes the most recent commit after push
 
     if echo "$COMMIT_MESSAGE" | grep -i -q -e "jenkins" -e "jenk" -e "kins" #TODO: should change that, with the shell script testing [[ .. ]]
