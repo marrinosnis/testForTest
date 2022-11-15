@@ -21,16 +21,13 @@ jobs:
             echo "Run the bash script to check the environment"
             cd .github/workflows
             chmod +x run.sh
-            bash ./run.sh
-        
-        - name: Run or Not the branch on Jenkins platform
-           # that means that the previous run of the script has exit with 1 ==> 'exit 1'
-          run: |
-            if [[ $? == 0 ]] 
-            then 
+            bash ./run.sh  
+            if [ $? -eq 0 ]
+            then
               echo "the job will execute"
             else
-              echo "the job WILL NOT EXECUTE"
+              echo "the job WILL NOT execute"
+        
 
         
         # - name: Run on the uraimo action
