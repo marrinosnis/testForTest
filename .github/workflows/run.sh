@@ -17,7 +17,7 @@ else
         exit 0
     else
         echo "No job should run-trigerred"     
-        #exit 1  # exit with 1, so NONE Jenkins pipeline will start
+        #exit 1  #  exit with 1, so NONE Jenkins pipeline will start
     fi
 
 fi
