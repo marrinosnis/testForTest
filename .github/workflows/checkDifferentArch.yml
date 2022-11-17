@@ -21,12 +21,13 @@ jobs:
             echo "Run the bash script to check the environment"
             cd .github/workflows
             chmod +x run.sh
-            bash ./run.sh  
+            bash ./run.sh
+
             if [ $? -eq 0 ]
             then
-              echo "the job will execute"
+              echo "The jenkins job STARTED"
             else
-              echo "the job WILL NOT execute"
+              echo "No job will be run"
             fi
         
 
