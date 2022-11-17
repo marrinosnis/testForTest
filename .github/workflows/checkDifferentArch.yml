@@ -21,11 +21,13 @@ jobs:
             echo "Run the bash script to check the environment"
             cd .github/workflows
             chmod +x run.sh
-            bash ./run.sh
 
-            temp=echo $?
-
-            echo "the value of thet temp is: $temp"
+            if [ bash ./run.sh -eq 0 ]
+            then
+              echo "yes"
+            else
+              echo "no"
+            fi
         
 
         
