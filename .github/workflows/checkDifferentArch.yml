@@ -23,12 +23,9 @@ jobs:
             chmod +x run.sh
             bash ./run.sh
 
-            if [ $? -eq 0 ]
-            then
-              echo "The jenkins job STARTED"
-            else
-              echo "No job will be run"
-            fi
+            temp=echo $?
+
+            echo "the value of thet temp is: $temp"
         
 
         
