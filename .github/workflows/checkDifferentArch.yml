@@ -26,6 +26,8 @@ jobs:
         - name: Check the run status
           if: failure()
           run: echo "NOTHING WILL GO ON"
+          else: 
+          run: echo "JENKINS JOB"
 
         # - name: Run on the uraimo action
         #   uses: uraimo/run-on-arch-action@v2
