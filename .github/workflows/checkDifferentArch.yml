@@ -21,16 +21,11 @@ jobs:
             echo "Run the bash script to check the environment"
             cd .github/workflows
             chmod +x run.sh
+            bash ./run.sh
 
-            if [ bash ./run.sh -eq 0 ]
-            then
-              echo "yes"
-            else
-              echo "no"
-            fi
-        
+          if: failure()
+          run: echo "NOTHING WILL GO ON"
 
-        
         # - name: Run on the uraimo action
         #   uses: uraimo/run-on-arch-action@v2
         #   with:

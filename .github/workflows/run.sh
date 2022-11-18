@@ -13,7 +13,12 @@ else
 
     if echo "$COMMIT_MESSAGE" | grep -i -q -e "jenkins" -e "jenk" -e "kins" #TODO: should change that, with the shell script testing [[ .. ]]
     then
-        echo "The jenkins job should be triggered"  
+        echo "The jenkins job should be triggered"
+        exit 0
+    else
+        echo "NO JOBS WILL BE RUN"
+        exit 1
+
     fi
 
 fi
