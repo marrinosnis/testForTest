@@ -23,6 +23,7 @@ jobs:
             chmod +x run.sh
             bash ./run.sh
 
+        - name: Check the run status
           if: failure()
           run: echo "NOTHING WILL GO ON"
 
