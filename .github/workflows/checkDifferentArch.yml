@@ -21,10 +21,10 @@ jobs:
             echo "Run the bash script to check the environment"
             cd .github/workflows
             chmod +x run.sh
-            run: echo "TEST=$(sh ./run.sh)" >> $GITHUB_ENV
+            run: echo "TEST=$(bash ./run.sh | tail -n 1; echo $?)" >> $GITHUB_ENV
     
         - name: Test
-          run: echo $TEST
+          run: echo "${{env.TEST}}"
 
 
         # - name: Run on the uraimo action
@@ -36,7 +36,7 @@ jobs:
         # - name: Compile the file from the repo
         #   run: |
         #     pwd
-        #     lss
+        #     ls
         #     g++ -c -Wall -g Main.cpp
         #     g++ -g -o Main.exe Main.o
         #     ./Main.exe
