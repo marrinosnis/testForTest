@@ -26,7 +26,7 @@ jobs:
         - name: Check the variable Value
           run: echo $SCRIPT_RESULT
 
-        - name: Decide whether or not the jenkins will run
+        - name: Decide whether or not the Jenkins will run
           if: contains(env.SCRIPT_RESULT, 'jenkins')
           run: echo "YES"
 
