@@ -21,12 +21,12 @@ jobs:
             echo "Run the bash script to check the environment"
             cd .github/workflows
             chmod +x run.sh
-            value=$(bash ./run.sh | tail -n 1; echo $?)
-            echo $value
+            echo "TEST=$(bash ./run.sh)" >> $GITHUB_ENV
 
-        # - name: Check the run status
-        #   if: failure()
-        #   run: echo "NOTHING WILL GO ON"
+        - name: Conditionally Run
+          if: contains(env.TEST, "jenkins")
+          run: | 
+            echo "let's run"
 
 
         # - name: Run on the uraimo action
