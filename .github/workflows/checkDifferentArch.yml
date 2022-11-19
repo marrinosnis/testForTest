@@ -21,7 +21,7 @@ jobs:
             echo "Run the bash script to check the environment"
             cd .github/workflows
             chmod +x run.sh
-            value=$(bash ./run.sh | tail -n 1)
+            value=$(bash ./run.sh | tail -n 1; echo $?)
             echo $value
 
         # - name: Check the run status
