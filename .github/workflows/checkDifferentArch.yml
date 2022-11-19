@@ -24,7 +24,7 @@ jobs:
             echo "TEST=$(bash ./run.sh)" >> $GITHUB_ENV
 
         - name: Conditionally Run
-          if: contains(env.TEST, "jenkins")
+          if: contains(env.TEST, 'jenkins')
           run: | 
             echo "let's run"
 
