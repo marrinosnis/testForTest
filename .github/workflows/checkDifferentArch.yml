@@ -21,10 +21,10 @@ jobs:
             echo "Run the bash script to check the environment"
             cd .github/workflows
             chmod +x run.sh
-            echo "TEST=$(bash ./run.sh | tail -n 1)" >> $GITHUB_ENV
+            echo "SCRIPT_RESULT=$(bash ./run.sh | tail -n 1)" >> $GITHUB_ENV           #store the output of the script to env variable SCRIPT_RESULT
 
         - name: Check the variable Value
-          run: echo $TEST
+          run: echo $SCRIPT_RESULT
 
 
         # - name: Run on the uraimo action
