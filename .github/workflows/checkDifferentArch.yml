@@ -27,7 +27,7 @@ jobs:
           run: echo $SCRIPT_RESULT
 
         - name: Decide whether or not the jenkins will run
-          if: contains(${{SCRIPT_RESULT}}, 'jenkins')
+          if: contains(env.SCRIPT_RESULT, 'jenkins')
           run: echo "YES"
 
 
