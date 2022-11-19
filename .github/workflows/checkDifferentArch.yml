@@ -26,6 +26,10 @@ jobs:
         - name: Check the variable Value
           run: echo $SCRIPT_RESULT
 
+        - name: Decide whether or not the jenkins will run
+          if: contains($SCRIPT_RESULT, 'jenkins')
+          run: echo "YES"
+
 
         # - name: Run on the uraimo action
         #   uses: uraimo/run-on-arch-action@v2
