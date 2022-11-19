@@ -23,7 +23,7 @@ jobs:
             chmod +x run.sh
             echo "TEST=$(bash ./run.sh | tail -n 1)" >> $GITHUB_ENV
 
-        -name: Check the variable value
+        - name: Check the variable value
           run: echo $TEST
 
 
