@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "The branch that is currently running is: $GITHUB_REF_NAME"
+#echo "The branch that is currently running is: $GITHUB_REF_NAME"
 
 if [[ $GITHUB_REF_NAME == *_epic ]]; then 
     echo "The branch is EPIC"  # if the the name of branch ends in '_epic' I DO NOT want to triger the jenkins pipeline
