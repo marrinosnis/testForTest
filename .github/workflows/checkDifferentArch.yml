@@ -15,13 +15,16 @@ jobs:
     steps:
         - name: Checkout the code
           uses: actions/checkout@v2.1.0
-        
+
         - name: Run the bash script
           run: | #when execute the script, I use 'bash ./run.sh' because the 'sh ./run.sh' doesn't have the '[[ ... ]]' testing syntax
             echo "Run the bash script to check the environment"
             cd .github/workflows
             chmod +x run.sh
             echo "TEST=$(bash ./run.sh | tail -n 1)" >> $GITHUB_ENV
+
+        -name: Check the variable value
+          run: echo $TEST
 
 
         # - name: Run on the uraimo action
