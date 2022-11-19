@@ -9,7 +9,7 @@ env:
 jobs:
   armv6 :
 
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     name: Builds on ubuntu-18.04 for Jenk
     steps:
@@ -17,18 +17,15 @@ jobs:
           uses: actions/checkout@v2.1.0
 
         - name: Run the bash script
-          run: | #when execute the script, I use 'bash ./run.sh' because the 'sh ./run.sh' doesn't have the '[[ ... ]]' testing syntax
-            echo "Run the bash script to check the environment"
-            cd .github/workflows
-            chmod +x run.sh
-            echo "SCRIPT_RESULT=$(bash ./run.sh | tail -n 1)" >> $GITHUB_ENV           #store the output of the script to env variable SCRIPT_RESULT
+          run: |                                                                # when execute the script, I use 'bash ./run.sh' because the 'sh ./run.sh' doesn't have the '[[ ... ]]' testing syntax
+            echo "Run the bash script to check the environment"                 # print nice message for the action
+            cd .github/workflows                                                # go to the proper path
+            chmod +x run.sh                                                     # give access for execution
+            echo "SCRIPT_RESULT=$(bash ./run.sh | tail -n 1)" >> $GITHUB_ENV    # store the output of the script to env variable SCRIPT_RESULT
 
-        - name: Check the variable Value
-          run: echo $SCRIPT_RESULT
-
-        - name: Decide whether or not the Jenkins will run
-          if: contains(env.SCRIPT_RESULT, 'jenkins')
-          run: echo "YES"
+        - name: The jenkins workflow will be triggered
+          if: contains(env.SCRIPT_RESULT, 'jenkins')                            # if the env variable contains the word 'jenkins' from the script file, then
+          run: echo "YES"                                                       # the proper Jenkins pipeline will be triggered
 
 
         # - name: Run on the uraimo action
