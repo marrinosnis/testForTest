@@ -21,10 +21,10 @@ jobs:
             echo "Run the bash script to check the environment"
             cd .github/workflows
             chmod +x run.sh
-            run: echo "TEST=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
+            run: echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
     
         - name: Test
-          run: echo $TEST
+          run: echo $GITHUB_SHA_SHORT
 
 
         # - name: Run on the uraimo action
