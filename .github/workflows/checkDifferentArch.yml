@@ -21,7 +21,7 @@ jobs:
             echo "Run the bash script to check the environment"
             cd .github/workflows
             chmod +x run.sh
-            run: echo "TEST=$(bash ./run.sh)" >> $GITHUB_ENV
+            run: echo "TEST=$(sh ./run.sh)" >> $GITHUB_ENV
     
         - name: Test
           run: echo $TEST
