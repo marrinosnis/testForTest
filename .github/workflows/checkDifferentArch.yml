@@ -11,7 +11,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    name: Builds on ubuntu-18.04 for Jenk
+    name: Builds on ubuntu-latest for Jenk
     steps:
         - name: Checkout the code
           uses: actions/checkout@v2.1.0
