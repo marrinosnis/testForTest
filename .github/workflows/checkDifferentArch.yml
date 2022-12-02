@@ -5,6 +5,9 @@ on: [push]  # create list, to indicate when the workflow will run
 env:
   ARTIFACT_NAME: myartifact
   #PATH_OF_SCRIPT: cd .github/workflows
+  JENKINS_HOST : https://jenkins.illinois.camelot.global/
+  JENKINS_JOB : job/services/job/excalibur-web/job/build-any-branch   # not sure if it needs the /build part in the path
+  JENKINS_PARAMS: no      # or here there must for any params that needs to be passed at the current job, e.g. for web, we don't need anything for bab, but for aem, we need some parameters, like the env, the 
 
 jobs:
   armv6 :
@@ -25,25 +28,11 @@ jobs:
 
         - name: The jenkins workflow will be triggered
           if: contains(env.SCRIPT_RESULT, 'jenkins')                            # if the env variable contains the word 'jenkins' from the script file, then
-          run: echo "YES"                                                       # the proper Jenkins pipeline will be triggered
-
-
-        # - name: Run on the uraimo action
-        #   uses: uraimo/run-on-arch-action@v2
-        #   with:
-        #     arch: armv6
-        #     distro: bullseye
-
-        # - name: Compile the file from the repo
-        #   run: |
-        #     pwd
-        #     ls
-        #     g++ -c -Wall -g Main.cpp
-        #     g++ -g -o Main.exe Main.o
-        #     ./Main.exe
-
-        # - name: Create artifacts
-        #   uses: actions/upload-artifact@v2
-        #   with:
-        #     name: ${{env.ARTIFACT_NAME}}
-        #     path: .
+          - name:
+            uses: sbitio/trigger-jenkins-job@master                             # the proper Jenkins pipeline will be triggered
+            with:  #this section is appropriate for AEM 
+              JENKINS_USER: ${{ secrets.JENKINS_USER }}
+              JENKINS_TOKEN: ${{ secrets.JENKINS_TOKEN }}
+              JENKINS_HOST: ${{ env.JENKINS_HOST }}
+              JENKINS_JOB: ${{ env.JENKINS_JOB }}
+              JENKINS_PARAMS: ${{ env.JENKINS_PARAMS }}
