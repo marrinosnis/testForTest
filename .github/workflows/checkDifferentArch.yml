@@ -28,6 +28,7 @@ jobs:
 
         - name: The jenkins workflow will be triggered
           if: contains(env.SCRIPT_RESULT, 'jenkins')                            # if the env variable contains the word 'jenkins' from the script file, then
+          run: echo "THE BUILD MUST HAVE STARTED"
           # - name:
           #   uses: sbitio/trigger-jenkins-job@master                             # the proper Jenkins pipeline will be triggered
           #   with:  #this section is appropriate for AEM 
