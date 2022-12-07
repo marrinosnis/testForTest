@@ -22,7 +22,7 @@ jobs:
         - name: Run the bash script
           run: |                                                                # when execute the script, I use 'bash ./run.sh' because the 'sh ./run.sh' doesn't have the '[[ ... ]]' testing syntax
             echo "Run the bash script to check the environment"                 # print nice message for the action
-            cd .github/workflows                                                # go to the proper path
+            # cd .github/workflows                                                # go to the proper path
             echo "SCRIPT_RESULT=$(sh ./.github/workflows/run.sh | tail -n 1)" >> $GITHUB_ENV    # store the output of the script to env variable SCRIPT_RESULT
 
         - name: The jenkins workflow will be triggered
