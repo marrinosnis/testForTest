@@ -11,8 +11,8 @@ else
     echo;
     COMMIT_MESSAGE=$(git log -1 HEAD --pretty=format:%s)  #each time takes the most recent commit after push
 
-    #if echo "$COMMIT_MESSAGE" | grep -i -q -e "jenkins" -e "jenk" -e "kins" #TODO: should change that, with the shell script testing [[ .. ]]
-    if [[ $COMMIT_MESSAGE =~ "jenkins" ]]   # paizei, alla prepei na balw kai multple words na ta kanei check
+    #if echo "$COMMIT_MESSAGE" | grep -i -q -e "jenkins" -e "jenk" -e "kins"            #TODO: should change that, with the shell script testing [[ .. ]]
+    if [[ $COMMIT_MESSAGE =~ "jenkins" ]]                           # paizei, alla prepei na balw kai multple words na ta kanei check
     then
         echo "The jenkins job should be triggered"
     else
