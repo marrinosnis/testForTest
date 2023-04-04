@@ -1,7 +1,7 @@
 name: check Different Architectures
 
 on: 
-  push  # create list, to indicate when the workflow will run
+  push:  # create list, to indicate when the workflow will run
   
   workflow_dispatch:
     inputs:
