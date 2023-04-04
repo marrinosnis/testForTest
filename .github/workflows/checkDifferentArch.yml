@@ -1,0 +1,46 @@
+name: check Different Architectures
+
+on: [push]  # create list, to indicate when the workflow will run
+  worflow_dispatch:
+    inputs:
+      Workflow_Run:
+      description: "Run the workflow manually"
+      required: false
+      type: boolean
+      default: false
+      
+
+env:
+  ARTIFACT_NAME: myartifact
+  #PATH_OF_SCRIPT: cd .github/workflows
+  JENKINS_HOST : https://jenkins.illinois.camelot.global/
+  JENKINS_JOB : job/services/job/excalibur-web/job/build-any-branch   # not sure if it needs the /build part in the path
+  JENKINS_PARAMS: no      # or here there must for any params that needs to be passed at the current job, e.g. for web, we don't need anything for bab, but for aem, we need some parameters, like the env, the 
+
+jobs:
+  armv6 :
+
+    runs-on: ubuntu-latest
+
+    name: Check for Jenkins build to start
+    steps:
+        - name: Checkout the code
+          uses: actions/checkout@v2.1.0
+
+        - name: Run the bash script
+          run: |                                                                # when execute the script, I use 'bash ./run.sh' because the 'sh ./run.sh' doesn't have the '[[ ... ]]' testing syntax
+            echo "Run the bash script to check the environment"                 # print nice message for the action
+            # cd .github/workflows                                                # go to the proper path
+            echo "SCRIPT_RESULT=$(bash ./.github/workflows/run.sh | tail -n 1)" >> $GITHUB_ENV    # store the output of the script to env variable SCRIPT_RESULT
+
+        - name: The jenkins workflow will be triggered
+          if: contains(env.SCRIPT_RESULT, 'jenkins')                            # if the env variable contains the word 'jenkins' from the script file, then
+          run: echo "THE BUILD MUST HAVE STARTED"
+          # - name:
+          #   uses: sbitio/trigger-jenkins-job@master                             # the proper Jenkins pipeline will be triggered
+          #   with:  #this section is appropriate for AEM 
+          #     JENKINS_USER: ${{ secrets.JENKINS_USER }}
+          #     JENKINS_TOKEN: ${{ secrets.JENKINS_TOKEN }}
+          #     JENKINS_HOST: ${{ env.JENKINS_HOST }}
+          #     JENKINS_JOB: ${{ env.JENKINS_JOB }}
+          #     JENKINS_PARAMS: ${{ env.JENKINS_PARAMS }}
