@@ -1,13 +1,15 @@
 name: check Different Architectures
 
-on: [push]  # create list, to indicate when the workflow will run
-  worflow_dispatch:
+on: 
+  push:  # create list, to indicate when the workflow will run
+  
+  workflow_dispatch:
     inputs:
       Workflow_Run:
-      description: "Run the workflow manually"
-      required: false
-      type: boolean
-      default: false
+        description: "Run the workflow manually"
+        required: false
+        type: boolean
+        default: false
       
 
 env:
