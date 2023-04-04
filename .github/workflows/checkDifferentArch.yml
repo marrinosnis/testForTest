@@ -2,6 +2,14 @@ name: check Different Architectures
 
 on: [push]  # create list, to indicate when the workflow will run
 
+  worflow_dispatch:
+    inputs:
+      Workflow_Run:
+      description: "Run the workflow manually"
+      type: boolean
+      default: false
+      required: false
+
 env:
   ARTIFACT_NAME: myartifact
   #PATH_OF_SCRIPT: cd .github/workflows
