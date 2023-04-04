@@ -4,10 +4,10 @@ on: [push]  # create list, to indicate when the workflow will run
   workflow_dispatch:
     inputs:
       Workflow_Run:
-      description: "Run the workflow manually"
-      required: false
-      type: boolean
-      default: false
+        description: "Run the workflow manually"
+        required: false
+        type: boolean
+        default: false
       
 
 env:
