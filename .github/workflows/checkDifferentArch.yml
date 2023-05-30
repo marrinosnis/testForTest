@@ -54,7 +54,7 @@ on: push
 jobs:
   Simple_echo_message:
     
-    runs-on: ubunut-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Run the echo command
         run: echo "Marinos"
