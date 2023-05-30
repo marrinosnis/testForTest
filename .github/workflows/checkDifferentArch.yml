@@ -55,6 +55,7 @@ jobs:
   Simple_echo_message:
     
     runs-on: ubunut-latest
-    name: Run the echo command
-    run: echo "Marinos"
+    steps:
+      - name: Run the echo command
+        run: echo "Marinos"
     
