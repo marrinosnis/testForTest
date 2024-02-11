@@ -8,3 +8,5 @@ This is a file which will include a readme instructions.
 5. this line if from MAC M1
 
 6. This is another new line from the windows machine
+
+7. Just to make sure that is working from the windows one
