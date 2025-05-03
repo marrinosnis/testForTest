@@ -1,3 +1,10 @@
 New file with incorrect content
 
 add a new line again
+
+new line to check the SSH nad GPG keys
+
+add this line from the cmd terminal this time
+
+new line from the WSL
+
