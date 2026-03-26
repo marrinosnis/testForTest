@@ -1,4 +1,4 @@
-add_library(CustomPrint)
+add_library(CustomPrint SHARED)
 
 target_sources(CustomPrint
 	PRIVATE
