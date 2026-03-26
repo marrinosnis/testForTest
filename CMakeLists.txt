@@ -7,7 +7,7 @@ target_sources(CustomPrint
 	PUBLIC
 		FILE_SET myHeaders
 		TYPE HEADERS
-		BASE_DIRS src
+#		BASE_DIRS src
 		FILES
-			CustomPrint.h
+			src/CustomPrint.h
 )
