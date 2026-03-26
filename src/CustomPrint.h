@@ -1,4 +1,4 @@
-#pragma_once
+#pragma once
 
 #include <string>
 
@@ -9,6 +9,6 @@ private:
 
 public:
 	CustomPrint(std::string message="") : m_message{message} {}
-
-	std::string showMessage(std::string message);
+	void setMessage(std::string setMessage);
+	std::string showMessage();
 };
