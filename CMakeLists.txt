@@ -7,7 +7,7 @@ target_sources(CustomPrint
 	PUBLIC
 		FILE_SET myHeaders
 		TYPE HEADERS
-		BASE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/src
+		BASE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}
 		FILES
-			CustomPrint.h
+			src/CustomPrint.h
 )
